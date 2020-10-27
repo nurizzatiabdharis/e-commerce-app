@@ -1,7 +1,3 @@
 # Application Ecommerce
 
-Application created for the purpose of study, an ecommerce store
-
-## Stack
-
-- ⚛️ **Ionic and Angular** - JavaScript Framework
+Application created for the purpose of study Ionic with Angular
