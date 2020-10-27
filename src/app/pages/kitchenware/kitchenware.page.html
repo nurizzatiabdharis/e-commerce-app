@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Kitchenware</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <table class="kitchenwareList">
+    <tr *ngFor= "let kitchenware of kitchenwareList">
+        <td>{{kitchenware.name }}  </td>
+        <td>{{kitchenware.price }}£</td>
+        <td></td>
+        <td><button (click)="addToCart(kitchenware)"> Buy </button></td>
+    </tr>
+  </table>
+</ion-content>

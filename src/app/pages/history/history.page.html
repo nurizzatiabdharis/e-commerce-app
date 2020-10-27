@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Test History</ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content class="ion-padding">
+<div *ngIf="!myHistoryList?.length > 0">
+  You have no shipping history
+</div>
+<div *ngIf="myHistoryList?.length > 0">
+    <table class="history-list" >
+        <tr>
+          <th>Booking id</th>
+          <th>Date</th>
+          <th>Total price</th>
+        </tr>
+        <tr  *ngFor="let history of myHistoryList">
+            <td><a>{{ history.id }}</a></td>
+            <td>{{ history.date | date}} </td> 
+            <td>{{ history.totalPrice }} £ </td>
+        </tr> 
+        <br/>
+    </table>
+</div>
+<!-- 
+<div *ngIf="myHistoryList?.length > 0 && isGiveDetails">
+    <tr  *ngFor="let history of myHistoryList">
+        
+    </tr>
+</div> -->
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <img [src]="userImage" />
+
+    <ion-icon name="camera" (click)="selectImage()"></ion-icon>
+    <p *ngIf="isLoading">Loading ...</p>
+    
+    <p> Name :  {{userName}} </p>
+    <p> Email : {{userEmail}}</p>
+    <p> Addresse : {{userAddresse}}</p>
+    <!-- <img [src]="croppedImagepath" /> -->
+
+    <ion-button (click)="showDetails()">
+      Card Details
+    </ion-button>
+    <div *ngIf="showCard">
+      <p>Card no: 3836835388335753</p>
+      <p>Expired date: 10/02/2023</p>
+      <p>CCV: 123</p>
+    </div>
+
+</ion-content>
+

@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Food</ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content class="ion-padding">
+    <table class="foodList">
+      <tr *ngFor= "let food of foodList">
+          <td>{{ food.name }}  </td>
+          <td>{{ food.price }}£</td>
+          <td></td>
+          <td><button (click)="addToCart(food)"> Buy </button></td>
+      </tr>
+    </table>
+</ion-content>

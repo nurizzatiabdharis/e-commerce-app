@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <form  #form="ngForm" (ngSubmit)="login(form)">
+        <ion-item>
+            <ion-icon name="contact"></ion-icon>
+            <ion-input name="name" type="text" placeholder="username" ngModel required></ion-input>
+          </ion-item>
+          
+          <ion-item>
+              <ion-icon name="lock"></ion-icon>
+              <ion-input name="password" type="password" placeholder="password" ngModel required></ion-input>
+          </ion-item>
+      <ion-button (click)="login(form)" routerLink="/menu/profile" expand="block">Login</ion-button>
+    </form>
+  </ion-content>

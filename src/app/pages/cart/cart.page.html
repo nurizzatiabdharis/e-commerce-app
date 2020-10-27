@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Cart</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+      <div *ngIf="!cartItems?.length > 0">
+          <p>Your Cart is empty</p>
+      </div>
+    
+      <div *ngIf="cartItems?.length > 0">
+        <table class="cart-item" >
+            <tr>
+              <th>product name</th>
+              <th>price</th>
+              <th>quantity</th>
+            </tr>
+            <tr  *ngFor="let cartItem of cartItems">
+                <td>{{ cartItem.name }} </td>
+                <td>{{ cartItem.quantity }} </td>
+                <td>{{ cartItem.price*cartItem.quantity }} £</td> 
+                <td><ion-icon name="add-circle" (click)="addToCart(cartItem)"></ion-icon>&nbsp;<ion-icon name="remove-circle" (click)="deleteFromCart(cartItem)"></ion-icon></td>   
+            </tr>
+            
+            <br/>
+        </table>
+        <h4>Subtotal = {{ subtotal }} £</h4>
+        <br/>
+        <diV>
+            <ion-button (click)="clearCart()"> Clear </ion-button>
+              <ion-button (click)="addToHistory()" > Confirm </ion-button>
+            <!-- <button routerLink="/form"> Payment </button> -->
+        </diV>
+      </div>
+  </ion-content>
